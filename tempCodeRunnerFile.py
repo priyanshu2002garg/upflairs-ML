@@ -1,1 +1,0 @@
-cv2.imwrite('myself.png',img)
