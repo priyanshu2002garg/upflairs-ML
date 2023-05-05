@@ -25,21 +25,14 @@ while True:
         for x,y,w,h in faces:
         #  x,y,w,h=(350,300,300,200)
             face=img[y:y+h,x:x+w,:].copy()
-            smiles=sd.detectMultiScale(
-                img_gray,
-                scaleFactor=1.1, 
-                minNeighbors=5,
-                minSize=(50,50)
-            )
-            
-            if(len(smiles)==1):
-                cv2.imwrite('myself.png',img)
-                notCaptured=False
             cv2.rectangle(
                 img,pt1=(x,y), pt2=(x+w,y+h), color=colors[i],
                 thickness=8
             )
             i=i+1
+            
+            cv2.imwrite('myself.png',img)
+                
             
         cv2.imshow('preview',img)
         key = cv2.waitKey(1)
